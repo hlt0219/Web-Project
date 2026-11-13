@@ -1,0 +1,269 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Catref</title>
+
+<script type="text/javascript">
+function MM_preloadImages() {
+  var d=document; 
+  if(d.images){
+    if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments;
+    for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){
+      d.MM_p[j]=new Image;
+      d.MM_p[j++].src=a[i];
+    }
+  }
+}
+</script>
+
+<style type="text/css">
+
+body,td,th {
+    font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+    color: #000000;
+}
+
+body {
+    background-color: darkblue;
+}
+
+/* Centering */
+.center-wrapper {
+    text-align: center;
+}
+
+/* Inputs */
+input[type=text],
+input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* BUTTONS (CHANGED TO BLUE) */
+button {background-color: #0066cc; color: white; padding: 14px 20px; margin: 8px 0; border: none; cursor: pointer;}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Cancel button
+.cancelbtn {width: auto; padding: 10px 18px; background-color: #0066cc;
+}
+
+.container {
+  padding: 16px;
+}
+
+/* Forgot password */
+span.psw { float: right; padding-top: 16px;}
+
+/* Modal Background */
+.modal { display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: transparent; padding-top: 60px;}
+
+.modal-content {  background-color: #fefefe; margin: 5% auto; border: 1px solid #888; width: 50%; border-radius: 8px;}
+
+.close {position: absolute; right: 25px; top: 0; color: #000; font-size: 35px; font-weight: bold;
+}
+
+.close:hover,
+.close:focus {color: red; cursor: pointer;
+}
+
+/* Animation */
+.animate { animation: animatezoom 0.6s;}
+
+@keyframes animatezoom {
+  from {transform: scale(0)}
+  to {transform: scale(1)}
+}
+
+/* Responsive */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+
+  .cancelbtn {
+     width: 100%;
+  }
+}
+
+</style>
+</head>
+
+<body onLoad="MM_preloadImages('')">
+
+<table width="957" height="762" border="0" align="center">
+  <tbody>
+
+    <!-- HEADER (IMAGE KEPT) -->
+    <tr>
+      <td width="947" height="157" bgcolor="#FFFFFF">
+        <img src="Harry’s-University.png" width="965" height="145" alt="University banner">
+      </td>
+    </tr>
+
+    <!-- NAV -->
+    <tr>
+      <td height="21" bgcolor="#FFFFFF">
+        <table width="800" height="33" border="0">
+          <tbody>
+            <tr>
+              <td width="138"><a href="Cartref.html">Home</a></td>
+              <td width="160"><a href="about.html">About</a></td>
+              <td width="138"><a href="login.html">Login</a></td>
+              <td width="160"><a href="dat.html">Dates and times</a></td>
+              <td width="138"><a href="addevents.html">Add Events</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+
+    <tr>
+      <td height="553" valign="top" bgcolor="#FFFFFF">
+
+        <div class="center-wrapper">
+
+          <h1>Welcome</h1>
+          <p>Please choose an option below.</p>
+
+          <button onclick="document.getElementById('signupModal').style.display='block'">
+            Sign Up
+          </button>
+
+          <button onclick="document.getElementById('loginModal').style.display='block'">
+            Login
+          </button>
+
+        </div>
+
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+
+<div id="signupModal" class="modal">
+
+  <form class="modal-content animate" action="/action_page.php">
+
+    <div class="container">
+
+      <span onclick="document.getElementById('signupModal').style.display='none'"
+      class="close">&times;</span>
+
+      <h1>Sign Up</h1>
+
+      <label><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+
+      <label><b>Repeat Password</b></label>
+      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+
+
+      <div class="container">
+
+        <button type="button"
+        onclick="document.getElementById('signupModal').style.display='none'"
+        class="cancelbtn">
+          Cancel
+        </button>
+
+        <button onclick="login()">Sign Up</button>
+
+<script>
+function login() {
+  alert("Sign Up sucsessful!");
+}
+</script>
+
+      </div>
+
+    </div>
+  </form>
+</div>
+
+<div id="loginModal" class="modal">
+
+  <form class="modal-content animate" action="/action_page.php" method="post">
+
+    <div class="container">
+
+      <span onclick="document.getElementById('loginModal').style.display='none'"
+      class="close">&times;</span>
+
+      <h1>Login</h1>
+
+      <label><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+
+      <button onclick="login()">Login</button>
+
+<script>
+function login() {
+  alert("Sucsessfully logged in!");
+}
+</script>
+
+      <label>
+        <input type="checkbox" checked="checked" name="remember">
+        Remember me
+      </label>
+
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+
+      <button type="button"
+      onclick="document.getElementById('loginModal').style.display='none'"
+      class="cancelbtn">
+        Cancel
+      </button>
+
+      <span class="psw">
+        Forgot <a href="#">password?</a>
+      </span>
+
+    </div>
+
+  </form>
+</div>
+
+<script>
+
+// Close modals when clicking outside
+window.onclick = function(event) {
+
+  var signupModal = document.getElementById('signupModal');
+  var loginModal = document.getElementById('loginModal');
+
+  if (event.target == signupModal) {
+    signupModal.style.display = "none";
+  }
+
+  if (event.target == loginModal) {
+    loginModal.style.display = "none";
+  }
+}
+
+</script>
+
+</body>
+</html>
